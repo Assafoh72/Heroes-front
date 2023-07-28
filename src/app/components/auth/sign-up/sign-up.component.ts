@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,11 +8,11 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit{
 
 
   form!: FormGroup;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup ({
@@ -22,6 +23,7 @@ export class SignUpComponent {
   }
   handleSubmit(): void {
     console.log(this.form)
+    this.router.navigate(['/app-heroes-list']);
   }
 
 }

@@ -30,7 +30,9 @@
 
     <input id="password" type="password" class="form-control" formControlName="password">
 
-    <div *ngIf= "!form.get('password')?.valid && form.get('password')?.touched" class="error-message">Please enter a valid password </div>
+    <div *ngIf= "!form.get('password')?.valid && form.get('password')?.touched" class="error-message">
+      Password must have at least 8 characters with one capital letter, one digit, and one non-alphanumeric character.
+    </div>
   </div>
 
   <button type="submit" [disabled]="!form.valid">Submit</button>
