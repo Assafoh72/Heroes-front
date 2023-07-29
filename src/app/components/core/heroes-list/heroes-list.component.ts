@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
+import { HeroService } from '../service/hero.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Hero } from '../../data/app.interfaces';
 })
 export class HeroesListComponent implements OnInit {
 
-  constructor() {}
+  constructor(private heroService: HeroService) {}
   ngOnInit(): void {
       // Call the saveToLocalStorage() function to save the data when the component is initialized
     this.saveToLocalStorage();
@@ -118,5 +119,11 @@ export class HeroesListComponent implements OnInit {
   localStorage.setItem('heroes', heroesJson);
 
 }
+
+onAddToMyheroes(hero: Hero): void {
+  this.heroService.addHeroToMyHeroes(hero);
+}
+
+
 
 }

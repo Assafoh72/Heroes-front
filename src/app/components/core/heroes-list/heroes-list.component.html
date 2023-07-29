@@ -10,6 +10,7 @@
     <p>Starting Power: {{ hero.startingPower }}</p>
     <p>Current Power: {{ hero.currentPower }}</p>
     <hr />
+    <button class="add-to-my-Heroes" (click)="onAddToMyheroes(hero)" >+</button>
   </div>
   <a routerLink="/app-my-heroes">go to My Heroes</a>
 </div>
