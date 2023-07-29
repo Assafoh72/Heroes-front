@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 
 
@@ -7,9 +7,15 @@ import { Hero } from '../../data/app.interfaces';
   templateUrl: './heroes-list.component.html',
   styleUrls: ['./heroes-list.component.css']
 })
-export class HeroesListComponent {
+export class HeroesListComponent implements OnInit {
 
-  disneyHeroes: Hero[] = [
+  constructor() {}
+  ngOnInit(): void {
+      // Call the saveToLocalStorage() function to save the data when the component is initialized
+    this.saveToLocalStorage();
+  }
+
+  heroes: Hero[] = [
     {
       name: 'Mickey Mouse',
       ability: 'defender',
@@ -101,5 +107,16 @@ export class HeroesListComponent {
       currentPower: 80,
     },
   ];
+
+  // Function to save data to local storage
+  saveToLocalStorage(): void {
+    const heroesJson = JSON.stringify(this.heroes);
+
+
+  // Save the JSON string to local storage under the key 'disneyHeroes'
+
+  localStorage.setItem('heroes', heroesJson);
+
+}
 
 }

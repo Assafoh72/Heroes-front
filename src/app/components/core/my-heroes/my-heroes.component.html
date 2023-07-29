@@ -1,7 +1,7 @@
-<h1>Heroes List</h1>
+<p>my-heroes list!</p>
 
 <div class="hero-cards-container">
-  <div class="hero-card" *ngFor="let hero of heroes">
+  <div class="hero-card" *ngFor="let hero of myHeroes">
     <h2>{{ hero.name }}</h2>
     <p>Ability: {{ hero.ability }}</p>
     <p>ID: {{ hero.id }}</p>
@@ -11,11 +11,6 @@
     <p>Current Power: {{ hero.currentPower }}</p>
     <hr />
   </div>
-  <a routerLink="/app-my-heroes">go to My Heroes</a>
+  <a routerLink="/app-heroes-list">go to all Heroes </a>
 </div>
-
-
-
-
-
 
