@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from "@angular/forms";
 import { Router } from '@angular/router';
 import { passwordValidator } from '../../core/service/password.validator';
+import { UserInfoService } from '../../core/service/user-info.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
 
 
   form!: FormGroup;
-  constructor(private router: Router) {}
+  constructor(private router: Router , private userInfoService: UserInfoService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup ({
@@ -23,7 +24,14 @@ export class SignUpComponent implements OnInit {
     });
   }
   handleSubmit(): void {
-    console.log(this.form)
+    const name = this.form.value.name
+    const email = this.form.value.email
+    const password = this.form.value.password
+    this.userInfoService.storeUserInfo (email, password, name)
+
+    // console.log(this.form)
+    console.log(this.userInfoService.getUserInfo());
+
     this.router.navigate(['/app-heroes-list']);
   }
 

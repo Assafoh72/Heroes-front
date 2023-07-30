@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
+import { UserInfoService } from '../../core/service/user-info.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit{
   form!: FormGroup;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userInfoService: UserInfoService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup ({
@@ -19,7 +20,21 @@ export class LoginComponent implements OnInit{
   }
   handleSubmit(): void {
     console.log(this.form)
-    this.router.navigate(['/app-heroes-list']);
+    if (this.isEmailAndPasswordValid()){
+      this.router.navigate(['/app-heroes-list']);
+    }
+    else {
+      this.displayErrorMessageEmailOrPassword = true
+    }
   }
+
+  isEmailAndPasswordValid(): boolean{
+    const email = this.form.value.email
+    const password = this.form.value.password
+    const userInfo = this.userInfoService.getUserInfo()
+    return email === userInfo?.email && password === userInfo?.password
+  }
+
+  displayErrorMessageEmailOrPassword = false
 
 }
