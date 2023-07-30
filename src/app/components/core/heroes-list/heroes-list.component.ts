@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../service/hero.service';
+import { compileDeclareInjectableFromMetadata } from '@angular/compiler';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['red', 'black', 'white'],
       startingPower: 80,
       currentPower: 80,
+      addedToMyHeroes: false,
     },
     {
       name: 'Mulan',
@@ -34,6 +36,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['red', 'yellow'],
       startingPower: 90,
       currentPower: 90,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Simba',
@@ -43,6 +47,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['yellow', 'orange'],
       startingPower: 85,
       currentPower: 85,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Aladdin',
@@ -52,6 +58,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['purple', 'white'],
       startingPower: 88,
       currentPower: 88,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Ariel',
@@ -61,6 +69,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['green', 'blue'],
       startingPower: 85,
       currentPower: 85,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Elsa',
@@ -70,6 +80,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['blue', 'white'],
       startingPower: 95,
       currentPower: 95,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Buzz Lightyear',
@@ -79,6 +91,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['green', 'purple'],
       startingPower: 88,
       currentPower: 88,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Pocahontas',
@@ -88,6 +102,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['brown', 'green'],
       startingPower: 87,
       currentPower: 87,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Woody',
@@ -97,6 +113,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['yellow', 'brown'],
       startingPower: 82,
       currentPower: 82,
+      addedToMyHeroes: false,
+
     },
     {
       name: 'Cinderella',
@@ -106,6 +124,8 @@ export class HeroesListComponent implements OnInit {
       suitColors: ['blue', 'silver'],
       startingPower: 80,
       currentPower: 80,
+      addedToMyHeroes: false,
+
     },
   ];
 
@@ -121,6 +141,7 @@ export class HeroesListComponent implements OnInit {
 }
 
 onAddToMyheroes(hero: Hero): void {
+  hero.addedToMyHeroes = true
   this.heroService.addHeroToMyHeroes(hero);
 }
 

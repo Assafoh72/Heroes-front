@@ -14,6 +14,8 @@ export class HeroService {
 
   // Method to add a hero to myHeroes
   addHeroToMyHeroes(hero: Hero): void {
+    // const heroToAdd = this.getMyHeroes()
+
     this.myHeroes.push(hero);
   }
 }

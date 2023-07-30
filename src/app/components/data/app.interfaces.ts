@@ -6,4 +6,5 @@ export interface Hero {
   suitColors: string[];
   startingPower: number;
   currentPower: number;
+  addedToMyHeroes: boolean;
 }

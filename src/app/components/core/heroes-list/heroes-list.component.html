@@ -9,8 +9,13 @@
     <p>Suit Colors: {{ hero.suitColors.join(', ') }}</p>
     <p>Starting Power: {{ hero.startingPower }}</p>
     <p>Current Power: {{ hero.currentPower }}</p>
+    <p>Was added to My-Heroes: {{ hero.addedToMyHeroes }}</p>
     <hr />
-    <button class="add-to-my-Heroes" (click)="onAddToMyheroes(hero)" >+</button>
+    <button
+    class="add-to-my-Heroes"
+    (click)="onAddToMyheroes(hero)"
+    *ngIf="!hero.addedToMyHeroes"
+     >+</button>
   </div>
   <a routerLink="/app-my-heroes">go to My Heroes</a>
 </div>
