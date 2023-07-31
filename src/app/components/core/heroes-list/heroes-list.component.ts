@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../service/hero.service';
+import { UserInfoService } from '../service/user-info.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { HeroService } from '../service/hero.service';
 })
 export class HeroesListComponent implements OnInit {
 
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService, private userInfoService: UserInfoService) {}
   ngOnInit(): void {
 
     this.heroes = this.heroService.getHeroesList();
@@ -21,6 +22,7 @@ export class HeroesListComponent implements OnInit {
 
   }
    heroes: Hero[]=[];
+   userName = this.userInfoService.getUserInfo()?.name;
 
   saveToLocalStorage(): void {
     const heroesJson: string = JSON.stringify(this.heroes);

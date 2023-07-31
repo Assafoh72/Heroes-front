@@ -33,3 +33,9 @@
   margin: 8px 0;
 }
 
+img{
+  max-width: 130px;
+  max-height: 200px;
+}
+
+

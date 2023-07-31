@@ -32,6 +32,7 @@ export class HeroService {
       addedToMyHeroes: false,
       lastTrainingDay: new Date (1999, 11, 18),
       countTrainingLastDay: 0,
+
     },
     {
       name: 'Mulan',

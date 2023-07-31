@@ -4,6 +4,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { HeroesListComponent } from './components/core/heroes-list/heroes-list.component';
 import { MyHeroesComponent } from './components/core/my-heroes/my-heroes.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: 'log-in', component: LoginComponent},
@@ -11,7 +12,7 @@ const routes: Routes = [
   {path: 'app-heroes-list', component: HeroesListComponent },
   {path: 'app-my-heroes' , component: MyHeroesComponent},
   {path: '', redirectTo: 'log-in', pathMatch: 'full'},
-  // {path: '**', component: LoginComponent }
+  {path: '**', component: PageNotFoundComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

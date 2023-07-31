@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeroesListComponent } from './components/core/heroes-list/heroes-list.component';
 import { MyHeroesComponent } from './components/core/my-heroes/my-heroes.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MyHeroesComponent } from './components/core/my-heroes/my-heroes.compone
     FooterComponent,
     HeroesListComponent,
     MyHeroesComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
