@@ -15,6 +15,7 @@ export class MyHeroesComponent implements OnInit {
 
     // Call the saveToLocalStorage() function to save the data when the component is initialized
     this.saveToLocalStorage();
+    console.log('Hello')
    }
 
   myHeroes: Hero[] = [
@@ -23,14 +24,15 @@ export class MyHeroesComponent implements OnInit {
 
   // Function to save data to local storage
   saveToLocalStorage(): void {
-    const heroesJson = JSON.stringify(this.myHeroes);
-
-
+  const myHeroesJson: string = JSON.stringify(this.myHeroes);
   // Save the JSON string to local storage under the key 'disneyHeroes'
-
-  localStorage.setItem('heroes', heroesJson);
-
+  localStorage.setItem('myHeroes', myHeroesJson);
 }
+
+geLocalStorage(): void {
+  localStorage.getItem
+}
+
 
 
 

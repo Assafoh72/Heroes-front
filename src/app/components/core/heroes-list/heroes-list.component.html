@@ -1,7 +1,7 @@
 <h1>Heroes List</h1>
 
 <div class="hero-cards-container">
-  <div class="hero-card" *ngFor="let hero of heroes">
+  <div class="hero-card" *ngFor="let hero of heroes; let i=index">
     <h2>{{ hero.name }}</h2>
     <p>Ability: {{ hero.ability }}</p>
     <p>ID: {{ hero.id }}</p>
@@ -13,13 +13,12 @@
     <hr />
     <button
     class="add-to-my-Heroes"
-    (click)="onAddToMyheroes(hero)"
+    (click)="onAddToMyheroes(hero, i)"
     *ngIf="!hero.addedToMyHeroes"
      >+</button>
   </div>
   <a routerLink="/app-my-heroes">go to My Heroes</a>
 </div>
-
 
 
 
