@@ -33,6 +33,13 @@ geLocalStorage(): void {
   localStorage.getItem
 }
 
+trainMyHero(index: number): void {
+  this.myHeroes[index].currentPower =  this.myHeroes[index].currentPower*(1+(Math.random()*0.1));
+  this.saveToLocalStorage()
+
+}
+
+
 
 
 
