@@ -30,6 +30,8 @@ export class HeroService {
       startingPower: 80,
       currentPower: 80,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
     },
     {
       name: 'Mulan',
@@ -40,6 +42,8 @@ export class HeroService {
       startingPower: 90,
       currentPower: 90,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -51,6 +55,8 @@ export class HeroService {
       startingPower: 85,
       currentPower: 85,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -62,6 +68,8 @@ export class HeroService {
       startingPower: 88,
       currentPower: 88,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -73,6 +81,8 @@ export class HeroService {
       startingPower: 85,
       currentPower: 85,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -84,6 +94,8 @@ export class HeroService {
       startingPower: 95,
       currentPower: 95,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -95,6 +107,8 @@ export class HeroService {
       startingPower: 88,
       currentPower: 88,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -106,6 +120,8 @@ export class HeroService {
       startingPower: 87,
       currentPower: 87,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -117,6 +133,8 @@ export class HeroService {
       startingPower: 82,
       currentPower: 82,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
     {
@@ -128,6 +146,8 @@ export class HeroService {
       startingPower: 80,
       currentPower: 80,
       addedToMyHeroes: false,
+      lastTrainingDay: new Date (1999, 11, 18),
+      countTrainingLastDay: 0,
 
     },
   ];
@@ -135,7 +155,7 @@ export class HeroService {
     return this.heroesList
   }
 
-  
+
 
 
 

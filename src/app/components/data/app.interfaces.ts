@@ -7,4 +7,6 @@ export interface Hero {
   startingPower: number;
   currentPower: number;
   addedToMyHeroes: boolean;
+  lastTrainingDay: Date;
+  countTrainingLastDay: number;
 }

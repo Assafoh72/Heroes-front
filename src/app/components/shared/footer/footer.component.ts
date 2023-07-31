@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterService } from './footer.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,13 +6,9 @@ import { FooterService } from './footer.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit{
-  constructor(private footerService: FooterService) {}
+  constructor() {}
   ngOnInit(): void {
 
-  }
-
-  onActivate() {
-    this.footerService.activatedEmitter.emit(true)
   }
 
 }
