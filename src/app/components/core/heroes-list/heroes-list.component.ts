@@ -22,6 +22,8 @@ export class HeroesListComponent implements OnInit {
 
   }
    heroes: Hero[]=[];
+   isDisplayNone: boolean = true
+
    userName = this.userInfoService.getUserInfo()?.name;
 
   saveToLocalStorage(): void {
@@ -33,10 +35,14 @@ export class HeroesListComponent implements OnInit {
     localStorage.getItem
   }
 
-  onAddToMyheroes(hero: Hero, index: number): void {
-    this.heroes[index].addedToMyHeroes = true
-    this.heroService.addHeroToMyHeroes(hero);
-    this.saveToLocalStorage()
-  }
+  // onAddToMyheroes(hero: Hero, index: number): void {
+  //   this.heroes[index].addedToMyHeroes = true
+  //   this.heroService.addHeroToMyHeroes(hero);
+  //   this.saveToLocalStorage()
+  // }
+
+  // onShowOrHideContent(): void{
+  //   this.isDisplayNone = !this.isDisplayNone
+  // }
 
 }
