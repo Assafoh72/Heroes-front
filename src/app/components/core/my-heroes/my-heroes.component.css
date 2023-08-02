@@ -70,3 +70,9 @@ a{
 .train-my-Heroes{
   background-color: rgb(83 138 164 / 35%);
 }
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+

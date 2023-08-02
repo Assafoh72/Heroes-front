@@ -30,11 +30,15 @@
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of heroes; let i=index">
       <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card>
-      <button
+
+      <div class="button-container">
+        <button
       class="add-to-my-Heroes"
       (click)="onAddToMyheroes(hero, i)"
       *ngIf="!hero.addedToMyHeroes"
-       >Add {{hero.name}} to your heroes</button>
+       >Add {{hero.name}} to your heroes
+      </button>
+      </div>
 
     </div>
   </div>

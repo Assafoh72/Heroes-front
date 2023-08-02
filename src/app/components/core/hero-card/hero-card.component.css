@@ -4,12 +4,19 @@
   display: flex;
   gap: 20px;
 }
+.external-container-content-hide{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+}
 
 img{
   width: 80px;
   height: 140px;
   padding: 6px;
 }
+
 .hero-card-content-hide{
   display: none;
 }
