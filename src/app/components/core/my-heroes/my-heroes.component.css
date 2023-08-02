@@ -1,21 +1,4 @@
-/* .container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 
-
-}
-
-.card{
-  width: 200px;
-  height: 290px;
-  background-color: aqua;
-  margin: 10px;
-  padding: 10px;
-
-} */
-
-/* heroes-list.component.css */
 h1{
   padding-left: 20px;
   padding-top: 20px;
@@ -26,17 +9,15 @@ h1{
  padding-bottom: 30px;
  border-radius: 20px;
  margin-top: 10px;
- /* background: rgb(238,174,202);
- box-shadow: 56px 52px 24px 14px rgba(84,19,19,0.75);
- -webkit-box-shadow: 56px 52px 24px 14px rgba(84,19,19,0.75);
- -moz-box-shadow: 56px 52px 24px 14px rgba(84,19,19,0.75); */
-
+ min-height: 70vh;
  background: rgb(131,58,180);
  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(102,125,13,1) 36%, rgba(252,176,69,1) 100%);
  background: rgb(2,0,36);
  background: linear-gradient(305deg, rgb(81, 79, 122) 0%, rgba(89,237,228,1) 50%, rgba(0,212,255,1) 100%);
  background: rgb(2,0,36);
  background: linear-gradient(305deg, rgba(2,0,36,1) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+ background: linear-gradient(305deg, rgb(116 112 182) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+
 }
 
 .external-button-container{
@@ -46,10 +27,8 @@ h1{
  margin-bottom: 20px;
 
 }
-/* 1 */
 .btn-1 {
  font-family: href="https://fonts.googleapis.com/css2?family=Lato&display=swap";
-
  background: rgb(48, 56, 160);
  background: linear-gradient(0deg, rgb(95, 103, 211) 0%, rgba(12,25,180,1) 100%);
  border: none;
@@ -63,90 +42,31 @@ background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
 }
 
 .button-content{
- font-size: 35px;
+ font-size: 20px;
 }
-
-
-
-
-
-
-/*
-.button-container{
- width: 250px;
- height: 50px;
- background-color: aquamarine;
- display: flex;
- justify-content: center;
- align-items: center;
- border-radius: 20px;
- margin-top: 5px;
- box-shadow: 10px 8px 10px 5px rgb(77, 67, 49);
-
-} */
-
 
 a{
  font-size: 20px;
  text-decoration-line : none;
  color: black;
-
 }
-
-
-
-
 
 .hero-cards-container {
  display: flex;
  flex-wrap: wrap;
  gap: 25px;
  justify-content: center;
-
-
-
 }
 
 .hero-card {
- background-color: #f0f0f0;
+  background: rgb(35 30 30 / 50%);
  border-radius: 8px;
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
  padding: 16px;
- width: 350px;
- height: 380px;
+ width: 261px;
+ height: 243px;
  box-shadow: 10px 8px 10px 5px rgb(77, 67, 49);
 }
-/*
-.hero-card-content-hide{
- display: none;
+.train-my-Heroes{
+  background-color: rgb(83 138 164 / 35%);
 }
-
-.hero-card-content-click{
- background-color: #f0f0f0;
-} */
-
-
-
-/*
-.hero-card h2 {
- margin-bottom: 8px;
- font-size: 18px;
- font-weight: bold;
-}
-
-.hero-card p {
- font-size: 14px;
-}
-
-.hero-card hr {
- border: none;
- border-top: 1px solid #ccc;
- margin: 8px 0;
-
-}
-*/
-
-
-
-
-

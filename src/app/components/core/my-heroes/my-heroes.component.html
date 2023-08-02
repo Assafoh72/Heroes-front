@@ -1,14 +1,23 @@
 <div class="external-container">
   <h1>My Heroes</h1>
 
+
+<div class="external-all-button-container">
   <div class="external-button-container">
     <button routerLink="/app-heroes-list" class="custom-btn btn-1">
       <span class="button-content">
         Go to all Heroes
       </span>
-        </button>
+    </button>
   </div>
-
+  <div class="external-button-container">
+    <button routerLink="/log-in" class="custom-btn btn-1">
+      <span class="button-content">
+      Log-out
+      </span>
+    </button>
+  </div>
+</div>
 
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of myHeroes; let i = index">
@@ -23,33 +32,6 @@
   </div>
 
 
-</div>
-<!-- <div class="hero-cards-container">
-  <div class="hero-card" *ngFor="let hero of myHeroes; let i = index">
-    <div>
-      <img *ngIf="hero.name === 'Mickey Mouse' " src="../../../../assets/Mickey_Mouse.png" alt="">
-      <img *ngIf="hero.name === 'Mulan' " src="../../../../assets/Mulan.jpg" alt="">
-      <img *ngIf="hero.name === 'Simba' " src="../../../../assets/simba.jpg" alt="">
-      <img *ngIf="hero.name === 'Aladdin' " src="../../../../assets/Aladdin.jpg" alt="">
-      <img *ngIf="hero.name === 'Ariel' " src="../../../../assets/Ariel.jpg" alt="">
-      <img *ngIf="hero.name === 'Elsa' " src="../../../../assets/Elsa.jpg" alt="">
-      <img *ngIf="hero.name === 'Buzz Lightyear' " src="../../../../assets/Buzz Lightyear.jpg" alt="">
-      <img *ngIf="hero.name === 'Pocahontas' " src="../../../../assets/Pocahontas.jpg" alt="">
-      <img *ngIf="hero.name === 'Woody' " src="../../../../assets/Woody.jpg" alt="">
-      <img *ngIf="hero.name === 'Cinderella' " src="../../../../assets/Cinderella.jpg" alt="">
-    </div>
-    <h2>{{ hero.name }}</h2>
-    <p>Ability: {{ hero.ability }}</p>
-    <p>ID: {{ hero.id }}</p>
-    <p>Start Date: {{ hero.startDate | date }}</p>
-    <p>Suit Colors: {{ hero.suitColors.join(', ') }}</p>
-    <p>Starting Power: {{ hero.startingPower }}</p>
-    <p>Current Power: {{ hero.currentPower }}</p>
-    <p>last Training Day: {{ hero.lastTrainingDay }}</p>
-    <p>count Training Last Day: {{hero.countTrainingLastDay}}</p>
-    <hr />
-    <button (click)="trainMyHero(i)">Train {{hero.name}}</button>
-  </div>
-  <a routerLink="/app-heroes-list">go to all Heroes </a>
-</div> -->
 
+
+</div>

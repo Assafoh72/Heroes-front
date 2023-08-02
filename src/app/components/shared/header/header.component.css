@@ -8,7 +8,10 @@ body{
 
 .container {
   height: 100px;
-  background-color: aqua;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(102,125,13,1) 36%, rgba(252,176,69,1) 100%);
+  background: linear-gradient(90deg, rgb(58 57 59) 0%, rgb(138 158 62) 36%, rgb(141 97 35) 100%);
+  background: linear-gradient(90deg, #9E9E9E 0%, #607D8B 36%, #9E9E9E 100%);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,7 +3,6 @@ import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../service/hero.service';
 import { UserInfoService } from '../service/user-info.service';
 
-
 @Component({
   selector: 'app-heroes-list',
   templateUrl: './heroes-list.component.html',
@@ -13,17 +12,13 @@ export class HeroesListComponent implements OnInit {
 
   constructor(private heroService: HeroService, private userInfoService: UserInfoService) {}
   ngOnInit(): void {
-
     this.heroes = this.heroService.getHeroesList();
-
     // Call the saveToLocalStorage() function to save the data when the component is initialized
     this.saveToLocalStorage();
-
-
   }
+
    heroes: Hero[]=[];
    isDisplayNone: boolean = true
-
    userName = this.userInfoService.getUserInfo()?.name;
 
   saveToLocalStorage(): void {
@@ -40,9 +35,4 @@ export class HeroesListComponent implements OnInit {
     this.heroService.addHeroToMyHeroes(hero);
     this.saveToLocalStorage()
   }
-
-  // onShowOrHideContent(): void{
-  //   this.isDisplayNone = !this.isDisplayNone
-  // }
-
 }

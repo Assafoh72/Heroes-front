@@ -1,7 +1,7 @@
 <div class="external-container">
   <div (click)="onShowOrHideContent()">
-    <img *ngIf="hero.name === 'Mickey Mouse' " src="../../../../assets/Mickey_Mouse.png" alt="">
-    <img *ngIf="hero.name === 'Mulan' " src="../../../../assets/Mulan.jpg" alt="">
+    <img *ngIf="hero.name === 'Mickey Mouse' " src="../../../../assets/micky 3.jpg" alt="">
+    <img *ngIf="hero.name === 'Mulan' " src="../../../../assets/Mulan_disney.png" alt="">
     <img *ngIf="hero.name === 'Simba' " src="../../../../assets/simba.jpg" alt="">
     <img *ngIf="hero.name === 'Aladdin' " src="../../../../assets/Aladdin.jpg" alt="">
     <img *ngIf="hero.name === 'Ariel' " src="../../../../assets/Ariel.jpg" alt="">
@@ -20,18 +20,6 @@
     <p>Starting Power: {{ hero.startingPower }}</p>
     <p>Current Power: {{ hero.currentPower }}</p>
     <p>Was added to My-Heroes: {{ hero.addedToMyHeroes }}</p>
-    <!-- <hr />
-    <button
-    class="add-to-my-Heroes"
-    (click)="onAddToMyheroes(hero, i)"
-    *ngIf="!hero.addedToMyHeroes"
-     >Train {{hero.name}}</button>
-     <button
-    class="train-my-Heroes"
-    (click)="trainMyHero(i)"
-    *ngIf="hero.addedToMyHeroes"
-     >Train {{hero.name}}</button> -->
-
   </div>
 </div>
 

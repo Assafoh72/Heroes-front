@@ -34,7 +34,7 @@ geLocalStorage(): void {
 
 trainMyHero(index: number): void {
   if(this.canBeTrain(index)){
-    this.myHeroes[index].currentPower =  this.myHeroes[index].currentPower*(1+(Math.random()*0.1));
+    this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1))) ;
   this.saveToLocalStorage()
   }
   else{
