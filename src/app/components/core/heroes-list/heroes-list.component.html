@@ -8,14 +8,23 @@
 
       <!-- <a routerLink="/app-my-heroes">go to {{userName}} Heroes </a> -->
       <div class="external-button-container">
-        <button routerLink="/app-my-heroes" class="custom-btn btn-1"><span class="button-content"> {{userName}} go to your Heroes</span></button>
+        <button routerLink="/app-my-heroes" class="custom-btn btn-1">
+          <span class="button-content">
+             {{userName}} go to your Heroes</span>
+            </button>
       </div>
 
 
 
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of heroes; let i=index">
-  <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card>
+      <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card>
+      <button
+      class="add-to-my-Heroes"
+      (click)="onAddToMyheroes(hero, i)"
+      *ngIf="!hero.addedToMyHeroes"
+       >Add {{hero.name}} to your heroes</button>
+
     </div>
   </div>
 

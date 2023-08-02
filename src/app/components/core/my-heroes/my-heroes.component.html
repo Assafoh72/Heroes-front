@@ -1,6 +1,30 @@
-<p>my-heroes list!</p>
+<div class="external-container">
+  <h1>My Heroes</h1>
 
-<div class="hero-cards-container">
+  <div class="external-button-container">
+    <button routerLink="/app-heroes-list" class="custom-btn btn-1">
+      <span class="button-content">
+        Go to all Heroes
+      </span>
+        </button>
+  </div>
+
+
+  <div class="hero-cards-container">
+    <div class="hero-card" *ngFor="let hero of myHeroes; let i = index">
+      <app-hero-card [hero]="hero" [myHeroes]="myHeroes" [i]="i">
+      </app-hero-card>
+      <button
+    class="train-my-Heroes"
+    (click)="trainMyHero(i)"
+    *ngIf="hero.addedToMyHeroes"
+     >Train {{hero.name}}</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- <div class="hero-cards-container">
   <div class="hero-card" *ngFor="let hero of myHeroes; let i = index">
     <div>
       <img *ngIf="hero.name === 'Mickey Mouse' " src="../../../../assets/Mickey_Mouse.png" alt="">
@@ -27,5 +51,5 @@
     <button (click)="trainMyHero(i)">Train {{hero.name}}</button>
   </div>
   <a routerLink="/app-heroes-list">go to all Heroes </a>
-</div>
+</div> -->
 
