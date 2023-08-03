@@ -20,6 +20,7 @@ export class HeroCardComponent implements OnInit {
 
   @Input()myHeroes!: Hero[];
   @Input()myHero!: Hero;
+  @Input()myHeroesSubscription!: Hero[];
 
 
 

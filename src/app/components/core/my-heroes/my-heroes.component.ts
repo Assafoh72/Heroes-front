@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../service/hero.service';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-my-heroes',
@@ -8,8 +10,23 @@ import { HeroService } from '../service/hero.service';
   styleUrls: ['./my-heroes.component.css']
 })
 export class MyHeroesComponent implements OnInit {
+
+   private myHeroesSubscription!: Subscription;
+
+
   constructor(private heroService: HeroService) {}
    ngOnInit(): void {
+
+    this.myHeroesSubscription = this.heroService.myHeroes$.subscribe(myHeroes => {
+      this.myHeroes = myHeroes;
+      this.sortMyHeroes();
+      this.heroService.getHeroesList();
+    });
+
+
+
+
+
     // Retrieve the data from the HeroService
     this.myHeroes = this.heroService.getMyHeroes();
 
@@ -34,8 +51,16 @@ geLocalStorage(): void {
 
 trainMyHero(index: number): void {
   if(this.canBeTrain(index)){
-    this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1))) ;
-  this.saveToLocalStorage()
+    this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1)));
+    // this.heroService.setMyHeroes(this.myHeroes)
+      this.heroService.updateMyHeroes(this.myHeroes)
+
+
+    console.log(this.myHeroes);
+
+    this.saveToLocalStorage()
+
+
   }
   else{
     alert('cant be traind more then five time a day, try tomorrow');
@@ -67,6 +92,16 @@ canBeTrain(index: number): boolean {
 
 }
 
+sortMyHeroes() {
+  this.myHeroes.sort((b, a) => a.currentPower - b.currentPower)
+}
 
+ngOnDestroy(): void {
+  // Unsubscribe from the myHeroes subscription
+  this.myHeroesSubscription.unsubscribe();
+}
 
 }
+
+
+

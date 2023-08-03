@@ -1,17 +1,46 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
+import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
+
   private myHeroes: Hero[] = [];
+
+  private myHeroesSubject = new BehaviorSubject<Hero[]>([]);
+  myHeroes$: Observable<Hero[]> = this.myHeroesSubject.asObservable();
+
+  updateMyHeroes(heroes: Hero[]) {
+    this.myHeroesSubject.next(heroes);
+    // this.saveToLocalStorage();
+  }
+
+// updateMyHeroes(heroes: Hero[]) {
+//     this.myHeroesSubject.next(heroes);
+//     // this.saveToLocalStorage();
+//   }
+
+  // myHeroesSubject = new BehaviorSubject(this.myHeroes);
+
+  // // getPowerChangeSubject(){
+  // //   return this.powerChangeSubject;
+  // // }
+  // updateMyHeroesCurrentPower(myHeroes: Hero[]){
+  //   this.powerChangeSubject.next(myHeroes);
+  // }
+
 
   // Method to get myHeroes
   getMyHeroes(): Hero[] {
+    // this.powerChangeSubject.subscribe;
+    this.myHeroes.sort((b, a) => a.currentPower - b.currentPower)
     return this.myHeroes;
   }
+
 
   // Method to add a hero to myHeroes
   addHeroToMyHeroes(hero: Hero): void {
@@ -153,6 +182,7 @@ export class HeroService {
     },
   ];
   getHeroesList(): Hero[] {
+    this.heroesList.sort((b, a) => a.currentPower - b.currentPower)
     return this.heroesList
   }
 
