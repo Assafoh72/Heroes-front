@@ -29,7 +29,6 @@ export class SignUpComponent implements OnInit {
     const password = this.form.value.password
     this.userInfoService.storeUserInfo (email, password, name)
 
-    // console.log(this.form)
     console.log(this.userInfoService.getUserInfo());
 
     this.router.navigate(['/app-heroes-list']);

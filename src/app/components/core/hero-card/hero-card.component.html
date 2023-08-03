@@ -1,15 +1,6 @@
 <div class="external-container-content-hide">
   <div (click)="onShowOrHideContent()">
-    <img *ngIf="hero.name === 'Mickey Mouse' " src="../../../../assets/micky 3.jpg" alt="">
-    <img *ngIf="hero.name === 'Mulan' " src="../../../../assets/Mulan_disney.png" alt="">
-    <img *ngIf="hero.name === 'Simba' " src="../../../../assets/simba.jpg" alt="">
-    <img *ngIf="hero.name === 'Aladdin' " src="../../../../assets/Aladdin.jpg" alt="">
-    <img *ngIf="hero.name === 'Ariel' " src="../../../../assets/Ariel.jpg" alt="">
-    <img *ngIf="hero.name === 'Elsa' " src="../../../../assets/Elsa.jpg" alt="">
-    <img *ngIf="hero.name === 'Buzz Lightyear' " src="../../../../assets/Buzz Lightyear.jpg" alt="">
-    <img *ngIf="hero.name === 'Pocahontas' " src="../../../../assets/Pocahontas.jpg" alt="">
-    <img *ngIf="hero.name === 'Woody' " src="../../../../assets/Woody.jpg" alt="">
-    <img *ngIf="hero.name === 'Cinderella' " src="../../../../assets/Cinderella.jpg" alt="">
+  <img [src]="'../../../../assets/' + hero.name + '.jpg'" alt="">
   </div>
   <div [ngClass]="isDisplayNone? 'hero-card-content-hide' : 'hero-card-content-click' ">
     <h2>{{ hero.name }}</h2>
@@ -21,5 +12,6 @@
     <p>Current Power: {{ hero.currentPower }}</p>
     <p>Was added to My-Heroes: {{ hero.addedToMyHeroes }}</p>
   </div>
+
 </div>
 

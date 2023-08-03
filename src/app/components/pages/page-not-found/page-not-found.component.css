@@ -6,8 +6,8 @@
 }
 
 img{
-max-width: 700px;
-max-height: 700px;
+max-width: 460px;
+max-height: 460px;
 margin-top: 5px;
 border-radius: 10px;
 }
@@ -21,7 +21,6 @@ border-radius: 10px;
   align-items: center;
   border-radius: 20px;
   margin-top: 5px;
-
 }
 
 a{
@@ -30,6 +29,11 @@ a{
   color: black;
 
 }
+/*
+.rotate-scale-up {
+	-webkit-animation: rotate-scale-up 1.2s linear both;
+	        animation: rotate-scale-up 1.2s linear both;
+} */
 
 
 
