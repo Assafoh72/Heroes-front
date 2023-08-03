@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../service/hero.service';
 
-
 @Component({
   selector: 'app-hero-card',
   templateUrl: './hero-card.component.html',

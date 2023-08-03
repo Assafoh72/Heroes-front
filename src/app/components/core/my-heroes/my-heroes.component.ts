@@ -23,14 +23,7 @@ export class MyHeroesComponent implements OnInit {
       this.heroService.getHeroesList();
     });
 
-
-
-
-
-    // Retrieve the data from the HeroService
     this.myHeroes = this.heroService.getMyHeroes();
-
-    // Call the saveToLocalStorage() function to save the data when the component is initialized
     this.saveToLocalStorage();
    }
 
@@ -38,10 +31,8 @@ export class MyHeroesComponent implements OnInit {
 
   ];
 
-  // Function to save data to local storage
   saveToLocalStorage(): void {
   const myHeroesJson: string = JSON.stringify(this.myHeroes);
-  // Save the JSON string to local storage under the key 'disneyHeroes'
   localStorage.setItem('myHeroes', myHeroesJson);
 }
 
@@ -52,7 +43,6 @@ geLocalStorage(): void {
 trainMyHero(index: number): void {
   if(this.canBeTrain(index)){
     this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1)));
-    // this.heroService.setMyHeroes(this.myHeroes)
       this.heroService.updateMyHeroes(this.myHeroes)
 
 
@@ -97,7 +87,6 @@ sortMyHeroes() {
 }
 
 ngOnDestroy(): void {
-  // Unsubscribe from the myHeroes subscription
   this.myHeroesSubscription.unsubscribe();
 }
 

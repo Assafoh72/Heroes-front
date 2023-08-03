@@ -13,7 +13,6 @@ export class HeroesListComponent implements OnInit {
   constructor(private heroService: HeroService, private userInfoService: UserInfoService) {}
   ngOnInit(): void {
     this.heroes = this.heroService.getHeroesList();
-    // Call the saveToLocalStorage() function to save the data when the component is initialized
     this.saveToLocalStorage();
   }
 
