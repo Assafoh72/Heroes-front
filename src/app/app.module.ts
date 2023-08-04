@@ -12,6 +12,7 @@ import { HeroesListComponent } from './components/pages/heroes-list/heroes-list.
 import { MyHeroesComponent } from './components/core/my-heroes/my-heroes.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { HeroCardComponent } from './components/core/hero-card/hero-card.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HeroCardComponent } from './components/core/hero-card/hero-card.compone
     MyHeroesComponent,
     PageNotFoundComponent,
     HeroCardComponent,
+    ModalComponent,
 
   ],
   imports: [

@@ -19,7 +19,7 @@ h1{
  background: linear-gradient(305deg, rgb(116 112 182) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
 
 }
-
+/*
 .external-button-container{
  display: flex;
  justify-content: center;
@@ -43,7 +43,7 @@ background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
 
 .button-content{
  font-size: 20px;
-}
+} */
 
 a{
  font-size: 20px;

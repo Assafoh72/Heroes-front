@@ -1,8 +1,35 @@
 <div class="container">
   <h1>HEROES PROJECT</h1>
-  
+  <!-- <div *ngIf="isUserLogedIn" class="external-all-button-container"> -->
+    <div *ngIf="isUserLogedIn && !isMyHeroesComponentOpen" class="external-button-container">
+      <button (click)="this.isMyHeroesComponentOpen=true" routerLink="/app-my-heroes" class="custom-btn btn-1">
+        <span class="button-content">
+          go to your Heroes</span>
+          </button>
+    </div>
 
-</div>
+
+    <div *ngIf="isUserLogedIn && isMyHeroesComponentOpen" class="external-button-container">
+      <button (click)="this.isMyHeroesComponentOpen=false" routerLink="/app-heroes-list" class="custom-btn btn-1">
+        <span class="button-content">
+          Go to all Heroes
+        </span>
+      </button>
+    </div>
+
+
+    <div *ngIf="isUserLogedIn" class="external-button-container">
+      <button (click)="this.isUserLogedIn=false" routerLink="/log-in" class="custom-btn btn-1">
+        <span class="button-content">
+        Log-out
+        </span>
+      </button>
+    </div>
+  </div>
+
+<!-- </div> -->
+
+
 
 
 

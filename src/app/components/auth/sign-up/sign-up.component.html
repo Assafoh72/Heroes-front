@@ -5,9 +5,9 @@
   <form [formGroup]="form" (ngSubmit)="handleSubmit()">
 
     <div class="user-box">
-      <input id="name" type="text" class="form-control" formControlName="name" autocomplete="off">
+      <input id="name" type="text" class="form-control" formControlName="name" autocomplete="on">
       <label for="name">
-        Name:
+        User Name:
       </label>
       <div *ngIf= "!form.get('name')?.valid && form.get('name')?.touched" class="error-message">
         Please enter a valid name
@@ -16,7 +16,7 @@
     </div>
 
     <div class="user-box">
-      <input id="email" type="email"  class="form-control" formControlName="email" autocomplete="off">
+      <input id="email" type="email"  class="form-control" formControlName="email" autocomplete="on">
         <label for="email">
           E-mail:
         </label>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="user-box">
-      <input id="password" type="password" class="form-control" formControlName="password" autocomplete="off">
+      <input id="password" type="password" class="form-control" formControlName="password" autocomplete="on">
       <label for="password">Password</label>
     </div>
 

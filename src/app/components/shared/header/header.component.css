@@ -13,7 +13,7 @@ body{
   background: linear-gradient(90deg, rgb(58 57 59) 0%, rgb(138 158 62) 36%, rgb(141 97 35) 100%);
   background: linear-gradient(90deg, #9E9E9E 0%, #607D8B 36%, #9E9E9E 100%);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border-radius: 20px;
 }
@@ -24,6 +24,45 @@ h1{
   padding: 20;
 
 }
+
+
+
+
+
+
+
+.external-all-button-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.external-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.btn-1 {
+  font-family: href="https://fonts.googleapis.com/css2?family=Lato&display=swap";
+  background: rgb(48, 56, 160);
+  background: linear-gradient(0deg, rgb(95, 103, 211) 0%, rgba(12,25,180,1) 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: #f5e1e1;
+  margin-top: 22px;
+}
+.btn-1:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+
+.button-content{
+  font-size: 20px;
+}
+
 
 
 

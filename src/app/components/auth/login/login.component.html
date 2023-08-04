@@ -4,12 +4,12 @@
   <label class="email-label">E-mail</label>
   <form [formGroup]="form" (ngSubmit)="handleSubmit()">
     <div class="user-box">
-      <input id="email" type="email"  class="form-control" formControlName="email" autocomplete="off">
+      <input id="email" type="email"  class="form-control" formControlName="email" autocomplete="on">
         <label for="email"></label>
-       
+
     </div>
     <div class="user-box">
-      <input id="password" type="password" class="form-control" formControlName="password" autocomplete="off">
+      <input id="password" type="password" class="form-control" formControlName="password" autocomplete="on">
       <label for="password">Password</label>
     </div>
 

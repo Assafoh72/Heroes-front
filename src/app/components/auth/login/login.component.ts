@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit{
   handleSubmit(): void {
     console.log(this.form)
     if (this.isEmailAndPasswordValid()){
+      this.userInfoService.updateIsUserLogedIn(true)
+      this.userInfoService.updateIsMyHeroesComponentOpen(false)
       this.router.navigate(['/app-heroes-list']);
     }
     else {
