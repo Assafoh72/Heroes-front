@@ -28,11 +28,8 @@ export class SignUpComponent implements OnInit {
     const email = this.form.value.email
     const password = this.form.value.password
     this.userInfoService.storeUserInfo (email, password, name)
-    // console.log(this.userInfoService.isUserLogedIn);
-
     this.userInfoService.updateIsUserLogedIn(true);
-
-    // console.log(this.userInfoService.isUserLogedIn);
+    console.log("sign up updatted the is user loged in");
 
     this.router.navigate(['/app-heroes-list']);
   }

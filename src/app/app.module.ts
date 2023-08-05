@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeroesListComponent } from './components/pages/heroes-list/heroes-list.component';
-import { MyHeroesComponent } from './components/core/my-heroes/my-heroes.component';
+import { MyHeroesComponent } from './components/pages/my-heroes/my-heroes.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { HeroCardComponent } from './components/core/hero-card/hero-card.component';
 import { ModalComponent } from './components/shared/modal/modal.component';

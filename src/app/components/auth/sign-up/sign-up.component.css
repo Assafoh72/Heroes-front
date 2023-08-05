@@ -19,12 +19,17 @@ body {
 .external-container{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  background: linear-gradient(305deg, rgb(116 112 182) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+  margin-top: 7px;
+  border-radius: 20px;
+  height: 110vh;
 
 }
 
 .login-box {
   margin-top: 7px;
+  margin-bottom: 30px;
   /* position: absolute; */
   top: 84%;
   left: 50%;

@@ -21,11 +21,13 @@ body {
   margin-top: 7px;
   border-radius: 20px;
 
+
 }
 
 
 .login-box {
   margin-top: 7px;
+  margin-bottom: 30px;
   /* position: absolute; */
   top: 70%;
   left: 50%;

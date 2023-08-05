@@ -22,9 +22,26 @@
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of heroes; let i=index">
       <!-- <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card> -->
-      <app-hero-card [hero]="hero"></app-hero-card>
+      <app-hero-card [hero]="hero">
 
-      <div class="button-container">
+        <div class="button-container">
+          <button
+        class="add-to-my-Heroes"
+        (click)="onAddToMyheroes(hero, i)"
+        *ngIf="!hero.addedToMyHeroes"
+         >Add {{hero.name}} to your heroes
+        </button>
+        </div>
+
+        <div class="message-hero-was-add"
+        *ngIf="hero.addedToMyHeroes"
+         >{{hero.name}} was added to your heroes
+        </div>
+
+
+      </app-hero-card>
+
+      <!-- <div class="button-container">
         <button
       class="add-to-my-Heroes"
       (click)="onAddToMyheroes(hero, i)"
@@ -32,6 +49,15 @@
        >Add {{hero.name}} to your heroes
       </button>
       </div>
+
+      <div class="message-hero-was-add"
+      *ngIf="hero.addedToMyHeroes"
+       >{{hero.name}} was added to your heroes
+      </div> -->
+
+
+
+
     </div>
   </div>
 
