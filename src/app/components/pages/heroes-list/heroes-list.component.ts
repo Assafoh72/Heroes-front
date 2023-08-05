@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../../core/service/hero.service';
 import { UserInfoService } from '../../core/service/user-info.service';
+import { ModalService } from '../../core/service/modal.service';
 
 
 @Component({
@@ -11,7 +12,13 @@ import { UserInfoService } from '../../core/service/user-info.service';
 })
 export class HeroesListComponent implements OnInit {
 
-  constructor(private heroService: HeroService, private userInfoService: UserInfoService) {}
+  constructor(
+    private heroService: HeroService,
+    private userInfoService: UserInfoService,
+    private modalService: ModalService
+
+    ) {}
+
   ngOnInit(): void {
     this.heroes = this.heroService.getHeroesList();
     this.saveToLocalStorage();
@@ -33,7 +40,16 @@ export class HeroesListComponent implements OnInit {
   onAddToMyheroes(hero: Hero, index: number): void {
     this.heroes[index].addedToMyHeroes = true
     this.heroService.addHeroToMyHeroes(hero);
+
+    //modal
+    this.modalService.updateIsModalDisplayed(true, 'Hero was added')
+
+
+
     this.saveToLocalStorage()
 
   }
+
+
+
 }

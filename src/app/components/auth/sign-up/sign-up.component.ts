@@ -14,7 +14,10 @@ export class SignUpComponent implements OnInit {
 
 
   form!: FormGroup;
-  constructor(private router: Router , private userInfoService: UserInfoService) {}
+  constructor(
+    private router: Router,
+    private userInfoService: UserInfoService
+    ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup ({
@@ -29,6 +32,7 @@ export class SignUpComponent implements OnInit {
     const password = this.form.value.password
     this.userInfoService.storeUserInfo (email, password, name)
     this.userInfoService.updateIsUserLogedIn(true);
+
     console.log("sign up updatted the is user loged in");
 
     this.router.navigate(['/app-heroes-list']);

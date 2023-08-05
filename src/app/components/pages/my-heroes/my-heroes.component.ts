@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../../core/service/hero.service';
 import { Subscription } from 'rxjs';
+import { ModalService } from '../../core/service/modal.service';
 
 
 @Component({
@@ -14,7 +15,10 @@ export class MyHeroesComponent implements OnInit {
    private myHeroesSubscription!: Subscription;
 
 
-  constructor(private heroService: HeroService) {}
+  constructor(
+    private heroService: HeroService,
+    private modalService: ModalService
+    ) {}
    ngOnInit(): void {
 
     this.myHeroesSubscription = this.heroService.myHeroes$.subscribe(myHeroes => {
@@ -53,7 +57,9 @@ trainMyHero(index: number): void {
 
   }
   else{
-    alert('cant be traind more then five time a day, try tomorrow');
+    // alert('cant be traind more then five time a day, try tomorrow');
+    this.modalService.updateIsModalDisplayed(true, 'cant be traind more then five time a day, try tomorrow')
+
   }
 
 }
