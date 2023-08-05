@@ -37,6 +37,10 @@ export class SignUpComponent implements OnInit {
     this.router.navigate(['/app-heroes-list']);
   }
 
+  isInputValid(form:FormGroup, input: string): boolean{
+    return !(!form.get(input)?.valid && form.get(input)?.touched)
+  }
+
 
 
 }

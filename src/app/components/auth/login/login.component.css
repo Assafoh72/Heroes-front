@@ -17,6 +17,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(305deg, rgb(116 112 182) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+  margin-top: 7px;
+  border-radius: 20px;
+
 }
 
 

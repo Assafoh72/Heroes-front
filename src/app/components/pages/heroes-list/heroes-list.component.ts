@@ -3,6 +3,7 @@ import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../../core/service/hero.service';
 import { UserInfoService } from '../../core/service/user-info.service';
 
+
 @Component({
   selector: 'app-heroes-list',
   templateUrl: './heroes-list.component.html',
@@ -33,5 +34,6 @@ export class HeroesListComponent implements OnInit {
     this.heroes[index].addedToMyHeroes = true
     this.heroService.addHeroToMyHeroes(hero);
     this.saveToLocalStorage()
+
   }
 }

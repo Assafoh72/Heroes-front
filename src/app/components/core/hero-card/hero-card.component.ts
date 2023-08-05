@@ -12,13 +12,13 @@ export class HeroCardComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.hero);
   }
-  
+
   @Input()hero!: Hero;
   @Input()heroes!: Hero[];
-  @Input()i!:number;
+  // @Input()i!:number;
 
-  @Input()myHeroes!: Hero[];
-  @Input()myHero!: Hero;
+  // @Input()myHeroes!: Hero[];
+  // @Input()myHero!: Hero;
   @Input()myHeroesSubscription!: Hero[];
 
   isDisplayNone: boolean = true

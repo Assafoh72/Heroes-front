@@ -36,6 +36,9 @@ export class LoginComponent implements OnInit{
     const userInfo = this.userInfoService.getUserInfo()
     return email === userInfo?.email && password === userInfo?.password
   }
+  isEmailValid(form:FormGroup): boolean{
+    return !(!form.get('email')?.valid && form.get('email')?.touched)
+  }
 
   displayErrorMessageEmailOrPassword = false
 

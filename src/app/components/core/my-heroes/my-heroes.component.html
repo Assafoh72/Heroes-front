@@ -21,7 +21,9 @@
 
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of myHeroes; let i = index">
-      <app-hero-card [hero]="hero" [myHeroes]="myHeroes" [i]="i">
+      <!-- <app-hero-card [hero]="hero" [myHeroes]="myHeroes" [i]="i"> -->
+        <app-hero-card [hero]="hero">
+
       </app-hero-card>
 
       <div class="button-container">

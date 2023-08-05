@@ -13,7 +13,9 @@
       <label for="password">Password</label>
     </div>
 
-    <div *ngIf= "!form.get('email')?.valid && form.get('email')?.touched" class="error-message">
+    <!-- <div *ngIf= "!form.get('email')?.valid && form.get('email')?.touched" class="error-message"> -->
+    <div *ngIf= "!isEmailValid(form)" class="error-message">
+
       Please enter a valid e-mail
     </div>
 

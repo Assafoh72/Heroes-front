@@ -1,6 +1,9 @@
 <div class="external-container">
   <h1>Heroes List</h1>
+
+  <!-- <app-modal></app-modal> -->
       <!-- <div class="external-all-button-container">
+
         <div class="external-button-container">
           <button routerLink="/app-my-heroes" class="custom-btn btn-1">
             <span class="button-content">
@@ -18,7 +21,8 @@
 
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of heroes; let i=index">
-      <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card>
+      <!-- <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card> -->
+      <app-hero-card [hero]="hero"></app-hero-card>
 
       <div class="button-container">
         <button
