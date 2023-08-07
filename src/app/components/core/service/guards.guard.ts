@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { UserInfoService } from './user-info.service';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+// import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,17 +20,14 @@ export class GuardsGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log("guard block");
       console.log(this.userInfoService.getIsUserLogedIn());
-      return true
-      if(this.userInfoService.getIsUserLogedIn()){
+      // return true
+      if(this.userInfoService.getIsUserLogedInGuard()){
         return true
       }
-      else{
-        return this.router.createUrlTree(['/log-in']);
 
-      }
-
+      return this.router.createUrlTree(['/log-in']);
+      
   }
 
 }

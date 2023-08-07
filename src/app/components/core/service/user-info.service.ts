@@ -19,6 +19,10 @@ export class UserInfoService {
   }
 
   private isUserLogedIn: boolean = false;  // רק שיהיה נח שיניתי לנכון
+
+  private isUserLogedInForGuard: boolean = false;  // רק שיהיה נח שיניתי לנכון
+
+
   private isUserLogedInSubject = new BehaviorSubject<boolean>(false) // רק שיהיה נח שיניתי לנכון
   isUserLogedIn$: Observable<boolean> = this.isUserLogedInSubject.asObservable();
 
@@ -29,6 +33,17 @@ export class UserInfoService {
   getIsUserLogedIn() {
     return this.isUserLogedIn
   }
+
+//
+  updateIsUserLogedInGuard(isUserLogedIn:boolean){
+    this.isUserLogedInForGuard=isUserLogedIn;
+  }
+
+  getIsUserLogedInGuard() {
+    return this.isUserLogedInForGuard
+  }
+
+//
 
   private isMyHeroesComponentOpen: boolean = false
   private isMyHeroesComponentOpenSubject = new BehaviorSubject<boolean>(false)

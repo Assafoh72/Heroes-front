@@ -34,6 +34,11 @@ export class SignUpComponent implements OnInit {
     this.userInfoService.updateIsUserLogedIn(true);
 
     console.log("sign up updatted the is user loged in");
+    console.log(this.userInfoService.getIsUserLogedIn());
+
+    //
+    this.userInfoService.updateIsUserLogedInGuard(true)
+    //
 
     this.router.navigate(['/app-heroes-list']);
   }
