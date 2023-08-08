@@ -16,10 +16,12 @@ export class HeaderComponent implements OnInit{
   public isUserLogedIn!: boolean
   public  isMyHeroesComponentOpen!: boolean
   ngOnInit(): void {
+
     this.isUserLogedInSubscription = this.userInfoService.isUserLogedIn$.subscribe (isUserLogedIn =>{
       this.isUserLogedIn = isUserLogedIn;
       this.userInfoService.getIsUserLogedIn();
     })
+    
     this.isMyHeroesComponentOpenSubscriotion = this.userInfoService.isMyHeroesComponentOpen$.subscribe(isMyHeroesComponentOpen =>{
       this.isMyHeroesComponentOpen = isMyHeroesComponentOpen;
       this.userInfoService.getIsMyHeroesComponentOpen()

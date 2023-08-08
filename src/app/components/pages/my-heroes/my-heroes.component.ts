@@ -49,14 +49,18 @@ geLocalStorage(): void {
 
 trainMyHero(index: number): void {
   if(this.canBeTrain(index)){
+    const currentPowerSave:number = this.myHeroes[index].currentPower;
+
     this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1)));
     this.heroService.updateMyHeroes(this.myHeroes)
     this.saveToLocalStorage()
+    this.modalService.updateIsModalDisplayed(true, this.myHeroes[index].name +' was trained: power go up from '+ currentPowerSave + ' to ' + this.myHeroes[index].currentPower+ ' !!!' )
   }
   else{
-    this.modalService.updateIsModalDisplayed(true, 'cant be traind more then five time a day, try tomorrow')
+    // const message = getHowMuchTimeTillVanBeTrain()
+    this.modalService.updateIsModalDisplayed(true, 'cant be traind more then five time a day, try in '
+    + this.getHowMuchTimeTillVanBeTrain())
   }
-
 }
 canBeTrain(index: number): boolean {
   const currentDate = new Date();
@@ -80,11 +84,20 @@ canBeTrain(index: number): boolean {
     this.myHeroes[index].countTrainingLastDay = 1;
     return true
   }
-
 }
 
 getIndexById(id: string): number {
   return this.myHeroes.findIndex(hero => hero.id === id);
+}
+
+getHowMuchTimeTillVanBeTrain(): string {
+  const currentTime = new Date;
+  const currentHoure = currentTime.getHours()
+  const currentMinutes = currentTime.getMinutes()
+  const hourRemain = 23-currentHoure;
+  const minutesRemain = 60-currentMinutes;
+  const result: string = hourRemain + ' Hours and ' + minutesRemain +' Minutes!'
+  return result
 }
 
 sortMyHeroes() {
@@ -102,8 +115,6 @@ ngOnDestroy(): void {
 
   startIndex = (this.currentPage - 1) * this.itemsPerPage;
   endIndex = this.startIndex + this.itemsPerPage;
-
-
 
  updatePage() {
    this.startIndex = (this.currentPage - 1) * this.itemsPerPage;
