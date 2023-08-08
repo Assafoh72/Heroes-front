@@ -11,6 +11,8 @@ h1{
  border-radius: 20px;
  margin-top: 10px;
  min-height: 70vh;
+ display: flex;
+ flex-direction: column;
  background: rgb(131,58,180);
  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(102,125,13,1) 36%, rgba(252,176,69,1) 100%);
  background: rgb(2,0,36);
@@ -32,6 +34,8 @@ a{
  flex-wrap: wrap;
  gap: 25px;
  justify-content: center;
+ align-items: center;
+ flex-grow: 1;
 }
 
 .hero-card {

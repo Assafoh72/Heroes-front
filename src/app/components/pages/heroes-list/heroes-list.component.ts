@@ -51,7 +51,7 @@ export class HeroesListComponent implements OnInit {
  // pegination
   itemsPerPage: number = 3
   currentPage: number = 1
-  totalPages: number = 3;
+  totalPages: number = 4;
 
   updatePage() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;

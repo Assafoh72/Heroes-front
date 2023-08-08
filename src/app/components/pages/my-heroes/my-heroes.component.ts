@@ -51,13 +51,12 @@ trainMyHero(index: number): void {
   if(this.canBeTrain(index)){
     const currentPowerSave:number = this.myHeroes[index].currentPower;
 
-    this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1)));
+    this.myHeroes[index].currentPower = Math.max(Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1))),this.myHeroes[index].currentPower+1);
     this.heroService.updateMyHeroes(this.myHeroes)
     this.saveToLocalStorage()
     this.modalService.updateIsModalDisplayed(true, this.myHeroes[index].name +' was trained: power go up from '+ currentPowerSave + ' to ' + this.myHeroes[index].currentPower+ ' !!!' )
   }
   else{
-    // const message = getHowMuchTimeTillVanBeTrain()
     this.modalService.updateIsModalDisplayed(true, 'cant be traind more then five time a day, try in '
     + this.getHowMuchTimeTillVanBeTrain())
   }
