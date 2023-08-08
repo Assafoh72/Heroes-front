@@ -17,17 +17,12 @@ export class HeroesListComponent implements OnInit {
     private heroService: HeroService,
     private userInfoService: UserInfoService,
     private modalService: ModalService
-
     ) {}
 
   ngOnInit(): void {
-    this.heroes = this.heroService.getHeroesList();   ///  pegination גם ישמש אותי ל
+    this.heroes = this.heroService.getHeroesList();
     this.saveToLocalStorage();
-
-    //pegination
     this.updatePage()
-    //pegination
-
   }
 
 
@@ -49,20 +44,11 @@ export class HeroesListComponent implements OnInit {
   onAddToMyheroes(hero: Hero, index: number): void {
     this.heroes[index].addedToMyHeroes = true
     this.heroService.addHeroToMyHeroes(hero);
-
-    //modal
     this.modalService.updateIsModalDisplayed(true, 'Hero was added')
-
-
-
     this.saveToLocalStorage()
-
   }
 
-
-
  // pegination
-
   itemsPerPage: number = 3
   currentPage: number = 1
   totalPages: number = 3;
@@ -82,10 +68,5 @@ export class HeroesListComponent implements OnInit {
     this.currentPage--;
     this.updatePage();
   }
-
-
   //pegination
-
-
-
 }

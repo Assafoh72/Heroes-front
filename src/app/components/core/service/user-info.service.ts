@@ -5,8 +5,6 @@ import { BehaviorSubject, Observable } from "rxjs";
   providedIn: 'root',
 })
 
-
-
 export class UserInfoService {
   private userInfo: { email: string; password: string; name: string } | null = null;
 
@@ -18,12 +16,12 @@ export class UserInfoService {
     return this.userInfo;
   }
 
-  private isUserLogedIn: boolean = false;  // רק שיהיה נח שיניתי לנכון
+  private isUserLogedIn: boolean = false;
 
-  private isUserLogedInForGuard: boolean = false;  // רק שיהיה נח שיניתי לנכון
+  private isUserLogedInForGuard: boolean = false;
 
 
-  private isUserLogedInSubject = new BehaviorSubject<boolean>(false) // רק שיהיה נח שיניתי לנכון
+  private isUserLogedInSubject = new BehaviorSubject<boolean>(false)
   isUserLogedIn$: Observable<boolean> = this.isUserLogedInSubject.asObservable();
 
   updateIsUserLogedIn(isUserLogedIn:boolean){
@@ -34,7 +32,6 @@ export class UserInfoService {
     return this.isUserLogedIn
   }
 
-//
   updateIsUserLogedInGuard(isUserLogedIn:boolean){
     this.isUserLogedInForGuard=isUserLogedIn;
   }
@@ -42,8 +39,6 @@ export class UserInfoService {
   getIsUserLogedInGuard() {
     return this.isUserLogedInForGuard
   }
-
-//
 
   private isMyHeroesComponentOpen: boolean = false
   private isMyHeroesComponentOpenSubject = new BehaviorSubject<boolean>(false)
@@ -56,7 +51,6 @@ export class UserInfoService {
   getIsMyHeroesComponentOpen() {
     return this.isMyHeroesComponentOpen
   }
-
 }
 
 

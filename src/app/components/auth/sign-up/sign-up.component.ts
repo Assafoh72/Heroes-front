@@ -23,7 +23,7 @@ export class SignUpComponent implements OnInit {
     this.form = new FormGroup ({
       name: new FormControl ('', Validators.required ),
       email: new FormControl ('', [Validators.required, Validators.email] ),
-      password: new FormControl ('', [Validators.required, passwordValidator()])  // Add the custom validator to the password control
+      password: new FormControl ('', [Validators.required, passwordValidator()])
     });
   }
   handleSubmit(): void {
@@ -32,14 +32,7 @@ export class SignUpComponent implements OnInit {
     const password = this.form.value.password
     this.userInfoService.storeUserInfo (email, password, name)
     this.userInfoService.updateIsUserLogedIn(true);
-
-    console.log("sign up updatted the is user loged in");
-    console.log(this.userInfoService.getIsUserLogedIn());
-
-    //
     this.userInfoService.updateIsUserLogedInGuard(true)
-    //
-
     this.router.navigate(['/app-heroes-list']);
   }
 

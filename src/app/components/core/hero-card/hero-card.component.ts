@@ -15,10 +15,6 @@ export class HeroCardComponent implements OnInit {
 
   @Input()hero!: Hero;
   @Input()heroes!: Hero[];
-  // @Input()i!:number;
-
-  // @Input()myHeroes!: Hero[];
-  // @Input()myHero!: Hero;
   @Input()myHeroesSubscription!: Hero[];
 
   isDisplayNone: boolean = true

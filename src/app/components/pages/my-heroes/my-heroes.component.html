@@ -1,34 +1,9 @@
-<!-- <div class="external-container">
-  <h1>My Heroes</h1>
-
-  <div class="hero-cards-container">
-    <div class="hero-card" *ngFor="let hero of myHeroes; let i = index">
-      <app-hero-card [hero]="hero">
-
-        <div class="button-container">
-
-          <button
-          class="train-my-Heroes"
-          (click)="trainMyHero(i)"
-          *ngIf="hero.addedToMyHeroes"
-           >Train {{hero.name}}
-          </button>
-          </div>
-
-      </app-hero-card>
-    </div>
-  </div>
-</div> -->
-
 <div class="external-container">
   <h1>My Heroes</h1>
-
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of displayedItems; let i = index">
       <app-hero-card [hero]="hero">
-
         <div class="button-container">
-
           <button
           class="train-my-Heroes"
           (click)="trainMyHero(getIndexById(hero.id))"
@@ -36,7 +11,6 @@
            >Train {{hero.name}}
           </button>
           </div>
-
       </app-hero-card>
     </div>
   </div>

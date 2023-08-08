@@ -16,39 +16,8 @@ h1{
   background: rgb(2,0,36);
   background: linear-gradient(305deg, rgba(2,0,36,1) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
   background: linear-gradient(305deg, rgb(116 112 182) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+  min-height: 79vh;
 }
-
-/*
-.external-all-button-container{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.external-button-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-
-}
-
-.btn-1 {
-  font-family: href="https://fonts.googleapis.com/css2?family=Lato&display=swap";
-  background: rgb(48, 56, 160);
-  background: linear-gradient(0deg, rgb(95, 103, 211) 0%, rgba(12,25,180,1) 100%);
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  color: #f5e1e1;
-}
-.btn-1:hover {
-   background: rgb(0,3,255);
-background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
-}
-
-.button-content{
-  font-size: 20px;
-} */
 
 a{
   font-size: 20px;
@@ -70,13 +39,12 @@ a{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 16px;
   width: 261px;
-  height: 243px;
+  height: 214px;
   box-shadow: 10px 8px 10px 5px rgb(77, 67, 49);
 }
 
 .add-to-my-Heroes{
   background-color: rgb(83 138 164 / 35%);
-
 }
 
 .button-container{
@@ -95,7 +63,6 @@ a{
   align-items: baseline;
   gap: 5px;
   margin-bottom: 20px;
-
 }
 
 .btn-1 {
@@ -108,10 +75,12 @@ a{
   color: #f5e1e1;
   margin-top: 22px;
 }
+
 .btn-1:hover {
-   background: rgb(0,3,255);
-background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+  background: rgb(0,3,255);
+  background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
 }
+
 .btn-1:disabled{
   background: #33404b;
 }

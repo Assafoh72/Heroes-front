@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit{
   public isUserLogedIn!: boolean
   public  isMyHeroesComponentOpen!: boolean
   ngOnInit(): void {
-    // this.isUserLogedIn = this.userInfoService.isUserLogedIn
     this.isUserLogedInSubscription = this.userInfoService.isUserLogedIn$.subscribe (isUserLogedIn =>{
       this.isUserLogedIn = isUserLogedIn;
       this.userInfoService.getIsUserLogedIn();
@@ -25,22 +24,10 @@ export class HeaderComponent implements OnInit{
       this.isMyHeroesComponentOpen = isMyHeroesComponentOpen;
       this.userInfoService.getIsMyHeroesComponentOpen()
     })
-
-    // updateIsUserLogedIn(TruOrFalseBoolean): {
-    //   this.userInfoService.updateIsUserLogedIn(false)
-    // };
-
-
-
-
-
   }
-
 
   ngOnDestroy(): void {
     this.isUserLogedInSubscription.unsubscribe();
     this.isMyHeroesComponentOpenSubscriotion.unsubscribe();
   }
-
-
 }

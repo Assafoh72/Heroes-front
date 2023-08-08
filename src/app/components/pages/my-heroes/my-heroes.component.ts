@@ -23,44 +23,20 @@ export class MyHeroesComponent implements OnInit {
    ngOnInit(): void {
 
     this.myHeroesSubscription = this.heroService.myHeroes$.subscribe(myHeroes => {
-      console.log('enter behevierSubject');
-      console.log(this.displayedItems);
-
       this.myHeroes = myHeroes;
       this.sortMyHeroes();
       this.totalPages = Math.max(Math.ceil((myHeroes.length)/3), 1) ;
       this.updatePage()
-      console.log(myHeroes);
-
-      console.log(Math.ceil((myHeroes.length)/3));
-
-      console.log(this.displayedItems);
-
       this.displayedItems = myHeroes.slice(this.startIndex, this.endIndex);
-      console.log(this.displayedItems);
-      console.log(this.totalPages);
-
-
-
       this.heroService.getHeroesList();
     });
-
     this.myHeroes = this.heroService.getMyHeroes();
     this.saveToLocalStorage();
-
-
-      //pegination
-      this.updatePage()
-      //pegination
-
+    this.updatePage()
    }
 
-  myHeroes: Hero[] = [
-
-  ];
-
-  displayedItems: Hero[] = []; //pegination
-
+  myHeroes: Hero[] = [];
+  displayedItems: Hero[] = [];
 
   saveToLocalStorage(): void {
   const myHeroesJson: string = JSON.stringify(this.myHeroes);
@@ -74,19 +50,11 @@ geLocalStorage(): void {
 trainMyHero(index: number): void {
   if(this.canBeTrain(index)){
     this.myHeroes[index].currentPower = Math.floor(this.myHeroes[index].currentPower*(1+(Math.random()*0.1)));
-      this.heroService.updateMyHeroes(this.myHeroes)
-
-
-    console.log(this.myHeroes);
-
+    this.heroService.updateMyHeroes(this.myHeroes)
     this.saveToLocalStorage()
-
-
   }
   else{
-    // alert('cant be traind more then five time a day, try tomorrow');
     this.modalService.updateIsModalDisplayed(true, 'cant be traind more then five time a day, try tomorrow')
-
   }
 
 }
@@ -127,11 +95,7 @@ ngOnDestroy(): void {
   this.myHeroesSubscription.unsubscribe();
 }
 
-
-
-
  // pegination
-
  itemsPerPage: number = 3
  currentPage: number = 1
  totalPages: number = 1
@@ -156,10 +120,7 @@ ngOnDestroy(): void {
    this.currentPage--;
    this.updatePage();
  }
-
-
  //pegination
-
 }
 
 
