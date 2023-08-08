@@ -87,7 +87,37 @@ a{
 .message-hero-was-add{
   color: #bedefa;
   font-size: 13px
-};
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 20px;
+
+}
+
+.btn-1 {
+  font-family: href="https://fonts.googleapis.com/css2?family=Lato&display=swap";
+  background: rgb(48, 56, 160);
+  background: linear-gradient(0deg, rgb(95, 103, 211) 0%, rgba(12,25,180,1) 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: #f5e1e1;
+  margin-top: 22px;
+}
+.btn-1:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+.btn-1:disabled{
+  background: #33404b;
+}
+
+
+
 
 
 

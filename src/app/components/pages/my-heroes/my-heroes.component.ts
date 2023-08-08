@@ -3,6 +3,7 @@ import { Hero } from '../../data/app.interfaces';
 import { HeroService } from '../../core/service/hero.service';
 import { Subscription } from 'rxjs';
 import { ModalService } from '../../core/service/modal.service';
+import { max } from 'rxjs-compat/operator/max';
 
 
 @Component({
@@ -22,18 +23,44 @@ export class MyHeroesComponent implements OnInit {
    ngOnInit(): void {
 
     this.myHeroesSubscription = this.heroService.myHeroes$.subscribe(myHeroes => {
+      console.log('enter behevierSubject');
+      console.log(this.displayedItems);
+
       this.myHeroes = myHeroes;
       this.sortMyHeroes();
+      this.totalPages = Math.max(Math.ceil((myHeroes.length)/3), 1) ;
+      this.updatePage()
+      console.log(myHeroes);
+
+      console.log(Math.ceil((myHeroes.length)/3));
+
+      console.log(this.displayedItems);
+
+      this.displayedItems = myHeroes.slice(this.startIndex, this.endIndex);
+      console.log(this.displayedItems);
+      console.log(this.totalPages);
+
+
+
       this.heroService.getHeroesList();
     });
 
     this.myHeroes = this.heroService.getMyHeroes();
     this.saveToLocalStorage();
+
+
+      //pegination
+      this.updatePage()
+      //pegination
+
    }
 
   myHeroes: Hero[] = [
 
   ];
+
+  displayedItems: Hero[] = []; //pegination
+
 
   saveToLocalStorage(): void {
   const myHeroesJson: string = JSON.stringify(this.myHeroes);
@@ -88,6 +115,10 @@ canBeTrain(index: number): boolean {
 
 }
 
+getIndexById(id: string): number {
+  return this.myHeroes.findIndex(hero => hero.id === id);
+}
+
 sortMyHeroes() {
   this.myHeroes.sort((b, a) => a.currentPower - b.currentPower)
 }
@@ -95,6 +126,39 @@ sortMyHeroes() {
 ngOnDestroy(): void {
   this.myHeroesSubscription.unsubscribe();
 }
+
+
+
+
+ // pegination
+
+ itemsPerPage: number = 3
+ currentPage: number = 1
+ totalPages: number = 1
+
+  startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  endIndex = this.startIndex + this.itemsPerPage;
+
+
+
+ updatePage() {
+   this.startIndex = (this.currentPage - 1) * this.itemsPerPage;
+   this.endIndex = this.startIndex + this.itemsPerPage;
+   this.displayedItems = this.myHeroes.slice(this.startIndex, this.endIndex);
+ }
+
+ nextPage() {
+   this.currentPage++;
+   this.updatePage();
+ }
+
+ prevPage() {
+   this.currentPage--;
+   this.updatePage();
+ }
+
+
+ //pegination
 
 }
 

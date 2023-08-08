@@ -27,7 +27,7 @@ export class GuardsGuard implements CanActivate {
       }
 
       return this.router.createUrlTree(['/log-in']);
-      
+
   }
 
 }

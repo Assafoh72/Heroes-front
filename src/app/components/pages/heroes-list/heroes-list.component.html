@@ -1,27 +1,7 @@
-<div class="external-container">
+<!-- <div class="external-container">
   <h1>Heroes List</h1>
-
-  <!-- <app-modal></app-modal> -->
-      <!-- <div class="external-all-button-container">
-
-        <div class="external-button-container">
-          <button routerLink="/app-my-heroes" class="custom-btn btn-1">
-            <span class="button-content">
-               {{userName}} go to your Heroes</span>
-              </button>
-        </div>
-        <div class="external-button-container">
-          <button routerLink="/log-in" class="custom-btn btn-1">
-            <span class="button-content">
-            Log-out
-            </span>
-          </button>
-        </div>
-      </div> -->
-
   <div class="hero-cards-container">
     <div class="hero-card" *ngFor="let hero of heroes; let i=index">
-      <!-- <app-hero-card [hero]="hero" [heroes]="heroes" [i]="i"></app-hero-card> -->
       <app-hero-card [hero]="hero">
 
         <div class="button-container">
@@ -37,32 +17,55 @@
         *ngIf="hero.addedToMyHeroes"
          >{{hero.name}} was added to your heroes
         </div>
-
-
       </app-hero-card>
-
-      <!-- <div class="button-container">
-        <button
-      class="add-to-my-Heroes"
-      (click)="onAddToMyheroes(hero, i)"
-      *ngIf="!hero.addedToMyHeroes"
-       >Add {{hero.name}} to your heroes
-      </button>
-      </div>
-
-      <div class="message-hero-was-add"
-      *ngIf="hero.addedToMyHeroes"
-       >{{hero.name}} was added to your heroes
-      </div> -->
-
-
-
-
     </div>
   </div>
+</div> -->
+<!--
+<div *ngFor="let item of displayedItems">
+</div>
 
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div> -->
+
+
+<div class="external-container">
+  <h1>Heroes List</h1>
+  <div class="hero-cards-container">
+    <div class="hero-card" *ngFor="let hero of displayedItems; let i=index">
+      <app-hero-card [hero]="hero">
+
+        <div class="button-container">
+          <button
+        class="add-to-my-Heroes"
+        (click)="onAddToMyheroes(hero, (i+((currentPage-1)*itemsPerPage)))"
+        *ngIf="!hero.addedToMyHeroes"
+         >Add {{hero.name}} to your heroes
+        </button>
+        </div>
+
+        <div class="message-hero-was-add"
+        *ngIf="hero.addedToMyHeroes"
+         >{{hero.name}} was added to your heroes
+        </div>
+      </app-hero-card>
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="btn-1" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <div>{{currentPage}} \ {{totalPages}}</div>
+    <button class="btn-1" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
 
 </div>
+
+
+
+
+
+
 
 
 

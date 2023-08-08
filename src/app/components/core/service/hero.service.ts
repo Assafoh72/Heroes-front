@@ -27,6 +27,7 @@ export class HeroService {
   addHeroToMyHeroes(hero: Hero): void {
 
     this.myHeroes.push(hero);
+    this.myHeroesSubject.next(this.myHeroes)//////
   }
 
   private heroesList: Hero[] = [
@@ -165,6 +166,8 @@ export class HeroService {
     this.heroesList.sort((b, a) => a.currentPower - b.currentPower)
     return this.heroesList
   }
+
+
 
 
 
