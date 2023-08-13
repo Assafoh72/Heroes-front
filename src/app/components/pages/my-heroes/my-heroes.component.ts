@@ -133,5 +133,3 @@ ngOnDestroy(): void {
  //pegination
 }
 
-
-
